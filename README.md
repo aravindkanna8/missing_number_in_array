@@ -33,14 +33,17 @@ Constraints:
 # [2] Find First Alert
 
 This Java code defines a class Main with two main methods: findFirstWord and main. Here's an explanation of the code:
-findFirstWord method:
+
+# findFirstWord method:
 This method takes a paragraph as input along with a HashSet of words to search for.
 It converts the paragraph to lowercase to make the search case-insensitive.
 It compiles a regex pattern \b\w+\b to match words in the paragraph.
 It creates a Matcher object using the pattern and the lowercased paragraph.
-It iterates over the matches found by the Matcher and checks if the word is in the HashSet of search words. If found, it returns the word; otherwise, it continues searching.
+It iterates over the matches found by the Matcher and checks if the word is in the HashSet of search words.
+If found, it returns the word; otherwise, it continues searching.
 If no matching word is found, it returns null.
-main method:
+
+# main method:
 This is the entry point of the program.
 It creates a Scanner object to read input from the console.
 It reads a paragraph input from the user using scanner.nextLine().
@@ -48,4 +51,6 @@ It initializes a HashSet named searchWords and adds three search words: "warning
 It calls the findFirstWord method with the input paragraph and searchWords HashSet.
 If a word is found, it prints "First word found: " followed by the word. Otherwise, it prints "None of the search words found in the paragraph."
 Finally, it closes the Scanner object.
-Overall, this code snippet demonstrates how to find and return the first occurrence of a specific word from a given paragraph based on a predefined set of search words using regular expressions and HashSet in Java.
+
+Overall, this code snippet demonstrates how to find and return the first occurrence of a specific word from a given paragraph 
+based on a predefined set of search words using regular expressions and HashSet in Java.
