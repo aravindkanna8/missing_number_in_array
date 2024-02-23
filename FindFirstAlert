@@ -1,0 +1,37 @@
+package firstword;
+
+import java.util.HashSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class Main {
+    public static String findFirstWord(String paragraph, HashSet<String> words) {
+        String lowerParagraph = paragraph.toLowerCase();
+        Pattern pattern = Pattern.compile("\\b\\w+\\b");
+        Matcher matcher = pattern.matcher(lowerParagraph);
+        while (matcher.find()) {
+            String token = matcher.group();
+            if (words.contains(token)) {
+                return token;
+            }
+        }
+        return null;
+    }
+
+    public static void main(String[] args) {
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        String paragraph = scanner.nextLine();
+        HashSet<String> searchWords = new HashSet<>();
+        searchWords.add("warning");
+        searchWords.add("critical");
+        searchWords.add("exhausted");
+        String firstWordFound = findFirstWord(paragraph, searchWords);
+        if (firstWordFound != null) {
+            System.out.println("\nFirst word found: " + firstWordFound);
+        } else {
+            System.out.println("None of the search words found in the paragraph.");
+        }
+        scanner.close();
+    }
+}
+
